@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # apps created by MH
     'home',
+    'notes',
 ]
 
 MIDDLEWARE = [

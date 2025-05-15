@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Details</title>
+</head>
+<body>
+    <h1>{{ note.title }}</h1>
+    <p><strong>Content:</strong> {{ note.content }}</p>
+    <p><strong>Created at:</strong> {{ note.created_at }}</p>
+    <p><strong>Last updated:</strong> {{ note.updated_at }}</p>
+    <a href="{% url 'notes:list' %}">Back to Notes List</a>
+</body>
+</html>
