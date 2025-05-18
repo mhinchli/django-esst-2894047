@@ -1,34 +1,30 @@
-<html>
-    <h1>Note Details</h1>
-    <table border="1" style="border-collapse: collapse;">
-        <style>
-            table th, table td {
-                padding: 8px;
-            }
-        </style>
-        <tr>
-            <th>ID</th>
-            <td>{{ note.id }}</td>
-        </tr>
-        <tr>
-            <th>Title</th>
-            <td>{{ note.title }}</td>
-        </tr>
-        <tr>
-            <th>Content</th>
-            <td>{{ note.text }}</td>
-        </tr>
-        <tr>
-            <th>Created At</th>
-            <td>{{ note.created }}</td>
-        </tr>
-        <tr>
-            <th>Updated</th>
-            <td>{{ note.updated_at }}</td>
-        </tr>
-        <tr>
-            <th>Likes</th>
-            <td>{{ note.likes }}</td>
-        </tr>
-    </table>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="my-5">{{ note.title }}</h1>
+<div class="container border round">
+  <div class="row g-0">
+    <div class="col-4 fw-bold">ID</div>
+    <div class="col-8">{{ note.id }}</div>
+  </div>
+  <div class="row g-0">
+    <div class="col-4 fw-bold">Title</div>
+    <div class="col-8">{{ note.title }}</div>
+  </div>
+  <div class="row g-0">
+    <div class="col-4 fw-bold">Content</div>
+    <div class="col-8">{{ note.text }}</div>
+  </div>
+  <div class="row g-0">
+    <div class="col-4 fw-bold">Created At</div>
+    <div class="col-8">{{ note.created }}</div>
+  </div>
+  <div class="row g-0">
+    <div class="col-4 fw-bold">Updated</div>
+    <div class="col-8">{{ note.updated_at }}</div>
+  </div>
+  <div class="row g-0">
+    <div class="col-4 fw-bold">Likes</div>
+    <div class="col-8">{{ note.likes }}</div>
+  </div>
+</div>
+{% endblock %}
