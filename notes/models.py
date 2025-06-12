@@ -5,4 +5,6 @@ class Notes(models.Model):
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     likes = models.PositiveIntegerField(default=0)
+    class Meta:
+        verbose_name_plural = "Notes"
     
