@@ -18,4 +18,5 @@ class PopularNotesListView(ListView):
 class NotesDetailView(DetailView):
     model = Notes
     context_object_name = "notes"
+    template_name = 'notes/notes_detail.html'
 
