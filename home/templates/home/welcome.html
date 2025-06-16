@@ -3,6 +3,7 @@
 {% block content %}
     <body><h1>Welcome to SmartNotes!</h1>
     <p>Today is {{today}}</p>
-    <a href="{%  url 'notes.list' %} %}" class="btn btn-primary">Check out these smart notes
+    <a href="{%  url 'notes.list' %}" class="btn btn-primary">Check out these smart notes
     </a>
-    {% endblock %}}
+    {% include 'home/advantages.html' %}
+{% endblock %}}
