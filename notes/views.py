@@ -1,15 +1,18 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import DetailView, ListView, CreateView, UpdateView
 from django.views.generic.edit import DeleteView
 from .forms import NotesForm
 from .models import Notes
 
 def add_like_view(request,pk):
-    note = get_object_or_404(Notes, pk=pk)
-    note.likes += 1
-    note.save()
-
+    if request.method == 'POST':
+        note = get_object_or_404(Notes, pk=pk)
+        note.likes += 1
+        note.save()
+        return HttpResponseRedirect(reverse('notes.detail', args=(pk,)))
+    return Http404
 class NotesDeleteView(DeleteView):
     model = Notes
     success_url = '/smart/notes'
