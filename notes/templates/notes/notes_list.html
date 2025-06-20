@@ -15,4 +15,10 @@
         </div>
         {% endfor %}
     </div>
+    <form id="logout-form" method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" style="background:none; border:none; padding:0; cursor:pointer; text-decoration:underline;">
+        Log out
+    </button>
+</form>
 {% endblock %}
