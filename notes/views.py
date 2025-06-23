@@ -58,7 +58,13 @@ class PopularNotesListView(ListView):
     template_name = 'notes/notes_list.html'
     queryset = Notes.objects.filter(likes__gte=1)
 
-class NotesDetailView(DetailView):
+class NotesDetailView(LoginRequiredMixin,DetailView):
     model = Notes
     context_object_name = "note"
     template_name = 'notes/notes_detail.html'
+
+class NotesPublicDetailView(DetailView):
+    model = Notes
+    context_object_name = "note"
+    template_name = 'notes/notes_detail.html'
+    queryset = Notes.objects.filter(is_public=True)
